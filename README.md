@@ -1,77 +1,99 @@
-# Ejercicios de TypeScript — UTN 2025
+# Ejercicios / Exercises
 
 ## Español
 
-Repositorio público con ejercicios de **Programación II** desarrollados en **TypeScript** durante la cursada 2025 de la Universidad Tecnológica Nacional (UTN).
+Esta carpeta contiene las resoluciones de los ejercicios desarrollados durante la cursada 2025 de Programación II.
 
-El objetivo es organizar, completar y documentar progresivamente los ejercicios realizados durante la materia, conservando TypeScript como registro de la cursada antes de continuar con C#.
+Los ejercicios se incorporarán progresivamente, incluyendo trabajos terminados, en desarrollo y pendientes de revisión.
 
-## Contenido
+## Organización
 
-Los ejercicios se encuentran dentro de la carpeta [`ejercicios`](./ejercicios).
+Cada ejercicio tendrá su propia carpeta:
 
-Cada ejercicio puede incluir:
+```text
+ejercicios/
+└── 01-nombre-del-ejercicio/
+    ├── README.md
+    ├── archivos TypeScript
+    ├── subcarpetas necesarias
+    └── uml/                    # Opcional
+        └── diagrama-clases.png
+```
 
-- Descripción o resumen del problema.
-- Resolución en TypeScript.
-- Diagrama UML realizado para la resolución.
-- Explicación del diseño aplicado.
-- Estado de desarrollo.
+La estructura interna podrá variar según la complejidad del ejercicio.
 
-## Estados
+Cada carpeta podrá contener:
 
-- ✅ Terminado
-- 🚧 En desarrollo
-- ⏳ Pendiente de resolución
-- 🔍 Pendiente de revisión
+- Un `README.md` bilingüe.
+- La resolución en TypeScript.
+- Las subcarpetas necesarias para organizar el código.
+- Diagramas UML propios dentro de una carpeta `uml`, cuando corresponda.
+- Archivos necesarios para ejecutar o comprender la solución.
 
-## Autoría y material académico
+## Convención de nombres
 
-Este repositorio contiene principalmente resoluciones, explicaciones y diagramas elaborados por el autor.
+Las carpetas utilizarán números correlativos y nombres descriptivos en minúsculas separados por guiones.
 
-No se publican archivos completos de clases, exámenes originales, material docente, proyectos base ni recursos de terceros que no cuenten con una autorización o licencia explícita.
+Ejemplos:
 
-Los enunciados podrán presentarse resumidos o redactados con palabras propias para brindar contexto a cada resolución.
+```text
+01-semaforo
+02-reproductor
+03-sistema-de-turnos
+```
 
-## Licencia
+## Índice
 
-La licencia MIT se aplica únicamente al contenido original desarrollado por el autor dentro de este repositorio.
+| N.º | Ejercicio                                   | Estado       |
+| --: | ------------------------------------------- | ------------ |
+|   — | Los ejercicios se agregarán progresivamente | ⏳ Pendiente |
 
 ---
 
 ## English
 
-Public repository containing **Programming II** exercises developed in **TypeScript** during the 2025 course at Universidad Tecnológica Nacional (UTN).
+This folder contains the solutions to the exercises developed during the 2025 Programming II course.
 
-The purpose of this repository is to progressively organize, complete, and document the exercises developed throughout the course, preserving TypeScript as a record of the coursework before continuing with C#.
+Exercises will be added progressively, including completed work, work in progress, and exercises pending review.
 
-## Contents
+## Organization
 
-The exercises are located inside the [`ejercicios`](./ejercicios) folder.
+Each exercise will have its own folder:
 
-Each exercise may include:
+```text
+ejercicios/
+└── 01-exercise-name/
+    ├── README.md
+    ├── TypeScript files
+    ├── required subfolders
+    └── uml/                    # Optional
+        └── class-diagram.png
+```
 
-- A description or summary of the problem.
-- A TypeScript solution.
-- A UML diagram created for the solution.
-- An explanation of the applied design.
-- Development status.
+The internal structure may vary depending on the complexity of each exercise.
 
-## Status
+Each folder may contain:
 
-- ✅ Completed
-- 🚧 In progress
-- ⏳ Pending solution
-- 🔍 Pending review
+- A bilingual `README.md`.
+- The TypeScript solution.
+- The subfolders required to organize the source code.
+- Original UML diagrams inside an optional `uml` folder.
+- Files required to run or understand the solution.
 
-## Authorship and academic material
+## Naming convention
 
-This repository mainly contains solutions, explanations, and diagrams created by the author.
+Folder names will use sequential numbers and descriptive lowercase words separated by hyphens.
 
-Complete class files, original examinations, teaching materials, starter projects, and third-party resources are not published unless they have an explicit license or authorization.
+Examples:
 
-Problem statements may be summarized or rewritten in the author's own words to provide context for each solution.
+```text
+01-semaforo
+02-reproductor
+03-sistema-de-turnos
+```
 
-## License
+## Index
 
-The MIT License applies only to the original content developed by the author within this repository.
+| No. | Exercise                              | Status     |
+| --: | ------------------------------------- | ---------- |
+|   — | Exercises will be added progressively | ⏳ Pending |
