@@ -47,6 +47,12 @@ Ejemplos:
 | N.º | Ejercicio                                   | Estado       |
 | --: | ------------------------------------------- | ------------ |
 |   — | Los ejercicios se agregarán progresivamente | ⏳ Pendiente |
+|   — | Los ejercicios se agregarán progresivamente | ⏳ Pendiente |
+|   — | Los ejercicios se agregarán progresivamente | ⏳ Pendiente |
+|   — | Los ejercicios se agregarán progresivamente | ⏳ Pendiente |
+|   — | Los ejercicios se agregarán progresivamente | ⏳ Pendiente |
+|   — | Los ejercicios se agregarán progresivamente | ⏳ Pendiente |
+|   — | Los ejercicios se agregarán progresivamente | ⏳ Pendiente |
 
 ---
 
