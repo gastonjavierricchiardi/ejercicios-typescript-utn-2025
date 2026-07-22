@@ -6,6 +6,30 @@ Esta carpeta contiene las resoluciones de los ejercicios desarrollados durante l
 
 Los ejercicios se incorporarán progresivamente, incluyendo trabajos terminados, en desarrollo y pendientes de revisión.
 
+## Instalación y ejecución
+
+Para ejecutar los ejercicios es necesario tener instalados Node.js y npm.
+
+Luego de clonar el repositorio, ubicarse en la carpeta raíz e instalar las dependencias:
+
+```bash
+npm install
+```
+
+Para ejecutar un ejercicio:
+
+```bash
+npx ts-node ejercicios/01EJ02/index.ts
+```
+
+El repositorio incluye los siguientes archivos de configuración:
+
+- `package.json`: define las dependencias y los datos generales del proyecto.
+- `package-lock.json`: conserva las versiones exactas instaladas.
+- `tsconfig.json`: contiene la configuración de TypeScript.
+
+La carpeta `node_modules` se genera automáticamente mediante `npm install` y no se incluye en el repositorio.
+
 ## Organización
 
 Cada ejercicio tendrá su propia carpeta:
@@ -36,70 +60,20 @@ Las carpetas utilizarán números correlativos y nombres descriptivos en minúsc
 
 Ejemplos:
 
-```text
-01-semaforo
-02-reproductor
-03-sistema-de-turnos
+```txt
+Esta estructura aún no la resuelvo
 ```
 
 ## Índice
 
-| N.º | Ejercicio                                   | Estado       |
-| --: | ------------------------------------------- | ------------ |
-|   — | Los ejercicios se agregarán progresivamente | ⏳ Pendiente |
-|   — | Los ejercicios se agregarán progresivamente | ⏳ Pendiente |
-|   — | Los ejercicios se agregarán progresivamente | ⏳ Pendiente |
-|   — | Los ejercicios se agregarán progresivamente | ⏳ Pendiente |
-|   — | Los ejercicios se agregarán progresivamente | ⏳ Pendiente |
-|   — | Los ejercicios se agregarán progresivamente | ⏳ Pendiente |
-|   — | Los ejercicios se agregarán progresivamente | ⏳ Pendiente |
+|    N.º | Ejercicio                                                                        | Estado                         |
+| -----: | -------------------------------------------------------------------------------- | ------------------------------ |
+| 01EJ01 | Crear una clase Persona que tenga los atributos públicos nombre y apellido [...] | Resuelto ✅                    |
+| 01EJ02 | Crear una clase Vehículo que tenga atributos públicos y privados                 | Resuelto ✅                    |
+|      — | Los ejercicios se agregarán progresivamente                                      | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
+|      — | Los ejercicios se agregarán progresivamente                                      | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
+|      — | Los ejercicios se agregarán progresivamente                                      | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
+|      — | Los ejercicios se agregarán progresivamente                                      | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
+|      — | Los ejercicios se agregarán progresivamente                                      | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
 
 ---
-
-## English
-
-This folder contains the solutions to the exercises developed during the 2025 Programming II course.
-
-Exercises will be added progressively, including completed work, work in progress, and exercises pending review.
-
-## Organization
-
-Each exercise will have its own folder:
-
-```text
-ejercicios/
-└── 01-exercise-name/
-    ├── README.md
-    ├── TypeScript files
-    ├── required subfolders
-    └── uml/                    # Optional
-        └── class-diagram.png
-```
-
-The internal structure may vary depending on the complexity of each exercise.
-
-Each folder may contain:
-
-- A bilingual `README.md`.
-- The TypeScript solution.
-- The subfolders required to organize the source code.
-- Original UML diagrams inside an optional `uml` folder.
-- Files required to run or understand the solution.
-
-## Naming convention
-
-Folder names will use sequential numbers and descriptive lowercase words separated by hyphens.
-
-Examples:
-
-```text
-01-semaforo
-02-reproductor
-03-sistema-de-turnos
-```
-
-## Index
-
-| No. | Exercise                              | Status     |
-| --: | ------------------------------------- | ---------- |
-|   — | Exercises will be added progressively | ⏳ Pending |
