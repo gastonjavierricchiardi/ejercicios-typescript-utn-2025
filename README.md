@@ -70,6 +70,15 @@ Esta estructura aún no la resuelvo
 | -----: | -------------------------------------------------------------------------------- | ------------------------------ |
 | 01EJ01 | Crear una clase Persona que tenga los atributos públicos nombre y apellido [...] | Resuelto ✅                    |
 | 01EJ02 | Crear una clase Vehículo que tenga atributos públicos y privados                 | Resuelto ✅                    |
+| 01EJ03 | Crear una clase Articulo que tenga los atributos privados marca y modelo.        | Resuelto ✅                    |
+| 01EJ04 | ​Crear una clase Cine que tenga los atributos privados película y horario        | Resuelto ✅                    |
+| 01EJ05 | Ampliación del Ej04 (nota: sin \*.dio)                                           | Resuelto ✅                    |
+| 01EJ06 | Crear una clase Fruta con variables privadas color, peso, esEstacional.          | Resuelto ✅                    |
+|      — | Los ejercicios se agregarán progresivamente                                      | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
+|      — | Los ejercicios se agregarán progresivamente                                      | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
+|      — | Los ejercicios se agregarán progresivamente                                      | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
+|      — | Los ejercicios se agregarán progresivamente                                      | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
+|      — | Los ejercicios se agregarán progresivamente                                      | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
 |      — | Los ejercicios se agregarán progresivamente                                      | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
 |      — | Los ejercicios se agregarán progresivamente                                      | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
 |      — | Los ejercicios se agregarán progresivamente                                      | ⏳ Pendiente ✅ ❌ `✅` y `❌` |

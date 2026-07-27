@@ -1,20 +1,20 @@
-3.​Crear una clase Articulo que tenga los atributos privados marca y modelo. // listo
+3. ​Crear una clase Articulo que tenga los atributos privados marca y modelo.
 
-●​ Crear métodos públicos para la asignación de valores. // listo
+- Crear métodos públicos para la asignación de valores. // listo
 
-●​ Crear una instancia y asignarle valores.
+- Crear una instancia y asignarle valores.
 
-●​ Notar que no es posible mostrar los valores por pantalla y analizar el motivo por lo que
-esto ocurre.
+> **Notar que:** no es posible mostrar los valores por pantalla y analizar el motivo por lo que esto ocurre.
 
-+++++*****+++++
+```ascii
 1- atributos
 2- constructor
 3- propiedades
 4- métodos
-+++++*****+++++
+```
 
-Análisis:
+# Análisis:
+
 Según la cursada, este ejercicio **no es de “patrón” GoF**, es de **visibilidad + encapsulación**.
 
 ## Qué está midiendo el enunciado (y por qué “no podés mostrar”)
@@ -30,11 +30,11 @@ Según la cursada, este ejercicio **no es de “patrón” GoF**, es de **visibi
 
 ## SOLID (si corresponde acá)
 
-* **SRP**: evitá meter `console.log` dentro de `Articulo` solo para “mostrar”. La idea de la unidad SOLID marca como problema mezclar “lógica del objeto” con “impresión”.
+- **SRP**: evitá meter `console.log` dentro de `Articulo` solo para “mostrar”. La idea de la unidad SOLID marca como problema mezclar “lógica del objeto” con “impresión”.
   ➡️ Mejor: `Articulo` modela datos; la salida por consola vive en `main` (o en otra clase de presentación). Para poder mostrar, necesitás **un método de lectura** (getter o algo que devuelva un string), no necesariamente imprimir desde adentro.
 
 ## Patrones
 
-* **Ninguno necesario** en este punto. Es un ejercicio de **encapsulación** y de entender cómo la visibilidad “cierra” los miembros hacia afuera.
+- **Ninguno necesario** en este punto. Es un ejercicio de **encapsulación** y de entender cómo la visibilidad “cierra” los miembros hacia afuera.
 
 Si querés, pasame tu “esqueleto” (solo la clase `Articulo` con privados + setters) y te hago checkpoint rápido: si cumple el enunciado y si el “no puedo mostrar” te va a ocurrir exactamente como esperan.
