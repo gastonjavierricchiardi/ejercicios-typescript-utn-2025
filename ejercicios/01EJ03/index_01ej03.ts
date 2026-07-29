@@ -1,4 +1,4 @@
-// index.ts
+// index_01EJ03.ts
 import Articulo from "./articulo";
 
 /**

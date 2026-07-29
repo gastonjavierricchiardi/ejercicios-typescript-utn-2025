@@ -1,6 +1,5 @@
-// \01EJ05\index
-/**
-5. ​Crear una clase Cine que tenga los atributos privados película y horario.
+/** \01EJ05\index
+5. ​Crear una clase `Cine` que tenga los atributos privados película y horario.
 - Crear métodos públicos para la asignación y recuperación de valores.
 - Crear una instancia y asignarle valores.
 - Mostrar por pantalla los valores.

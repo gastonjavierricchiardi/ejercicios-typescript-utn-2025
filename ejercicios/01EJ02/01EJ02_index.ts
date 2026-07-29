@@ -1,5 +1,5 @@
 /**
- * 2.​Crear una clase Vehiculo que tenga los atributos:
+ * 2.​ Crear una clase `Vehiculo` que tenga los atributos:
  * públicos:
  * -> marca
  * -> modelo
