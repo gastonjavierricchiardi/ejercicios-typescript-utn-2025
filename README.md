@@ -78,6 +78,12 @@ Esta estructura aún no la resuelvo
 | 01EJ08 | ​Crear una clase `Persona` que tenga los atributos privados:                                            | Resuelto ✅                    |
 | 01EJ09 | Modificar el Ej 08 y extender `Persona`                                                                 | Resuelto ✅                    |
 | 01EJ10 | Continuamos modificamos el EJ 08 ahora sobre escribimos el método `presentarse(): string {}`            | Resuelto ✅                    |
+| 01EJ11 | Continuamos con modificaciones desde el **EJ08**                                                        | Resuelto ✅                    |
+| 01EJ12 | Los ejercicios se agregarán progresivamente                                                             | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
+|      — | Los ejercicios se agregarán progresivamente                                                             | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
+|      — | Los ejercicios se agregarán progresivamente                                                             | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
+|      — | Los ejercicios se agregarán progresivamente                                                             | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
+|      — | Los ejercicios se agregarán progresivamente                                                             | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
 |      — | Los ejercicios se agregarán progresivamente                                                             | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
 |      — | Los ejercicios se agregarán progresivamente                                                             | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
 |      — | Los ejercicios se agregarán progresivamente                                                             | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
