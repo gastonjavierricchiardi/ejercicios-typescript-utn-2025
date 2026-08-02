@@ -1,0 +1,9 @@
+
+
+Usamos Strategy, ya que nos pide en tiempo de ejecución, gracias a esto... 
+aplicamos el Principio de Abierto/Cerrado, ya que si agregamos una nueva clase
+es para extender y no varia el comportamiento de las otras clases
+APlicamos Responsabilidad
+
+Entendemos que es Strategy porque habla de q ue cambia el comportamiento / algorimo
+en tiempo de ejecución.

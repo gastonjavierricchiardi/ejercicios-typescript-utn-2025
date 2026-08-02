@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var lancha_1 = require("./lancha");
+var objLancha1 = new lancha_1.default("El Gaucho", 100, 100, 100, true, 300);
+var objLancha2 = new lancha_1.default("La Gaucha", 100, 100, 100, true, 299);
+//const objAcorazado1 = new Acorazado("Mi acorazado", 20, 100, 90, 40);
+console.log(objLancha1.presentarse());
+objLancha1.remolcar(objLancha2);
+// console.log(objLancha2.presentarse());
+// console.log(objAcorazado1.presentarse());

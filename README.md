@@ -66,29 +66,29 @@ Esta estructura aún no la resuelvo
 
 ## Índice
 
-|    N.º | Ejercicio                                                                                               | Estado                         |
-| -----: | ------------------------------------------------------------------------------------------------------- | ------------------------------ |
-| 01EJ01 | Crear una clase `Persona` que tenga los atributos públicos nombre y apellido [...]                      | Resuelto ✅                    |
-| 01EJ02 | Crear una clase `Vehículo` que tenga atributos públicos y privados                                      | Resuelto ✅                    |
-| 01EJ03 | Crear una clase `Articulo` que tenga los atributos privados marca y modelo.                             | Resuelto ✅                    |
-| 01EJ04 | ​Crear una clase `Cine` que tenga los atributos privados película y horario                             | Resuelto ✅                    |
-| 01EJ05 | Ampliación del Ej04 (nota: sin \*.dio)                                                                  | Resuelto ✅                    |
-| 01EJ06 | Crear una clase `Fruta` con variables privadas color, peso, esEstacional.                               | Resuelto ✅                    |
-| 01EJ07 | Crear una clase `Ninja` con las variables privadas arteMarcial, arma, fuerza (entero) y salto (entero). | Resuelto ✅                    |
-| 01EJ08 | ​Crear una clase `Persona` que tenga los atributos privados:                                            | Resuelto ✅                    |
-| 01EJ09 | Modificar el Ej 08 y extender `Persona`                                                                 | Resuelto ✅                    |
-| 01EJ10 | Continuamos modificamos el EJ 08 ahora sobre escribimos el método `presentarse(): string {}`            | Resuelto ✅                    |
-| 01EJ11 | Continuamos con modificaciones desde el **EJ08**                                                        | Resuelto ✅                    |
-| 01EJ12 | Los ejercicios se agregarán progresivamente                                                             | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
-|      — | Los ejercicios se agregarán progresivamente                                                             | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
-|      — | Los ejercicios se agregarán progresivamente                                                             | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
-|      — | Los ejercicios se agregarán progresivamente                                                             | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
-|      — | Los ejercicios se agregarán progresivamente                                                             | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
-|      — | Los ejercicios se agregarán progresivamente                                                             | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
-|      — | Los ejercicios se agregarán progresivamente                                                             | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
-|      — | Los ejercicios se agregarán progresivamente                                                             | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
-|      — | Los ejercicios se agregarán progresivamente                                                             | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
-|      — | Los ejercicios se agregarán progresivamente                                                             | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
-|      — | Los ejercicios se agregarán progresivamente                                                             | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
+|    N.º | Ejercicio                                                                                                                                                                                                                                         | Estado                         |
+| -----: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
+| 01EJ01 | Crear una clase `Persona` que tenga los atributos públicos nombre y apellido [...]                                                                                                                                                                | Resuelto ✅                    |
+| 01EJ02 | Crear una clase `Vehículo` que tenga atributos públicos y privados                                                                                                                                                                                | Resuelto ✅                    |
+| 01EJ03 | Crear una clase `Articulo` que tenga los atributos privados marca y modelo.                                                                                                                                                                       | Resuelto ✅                    |
+| 01EJ04 | ​Crear una clase `Cine` que tenga los atributos privados película y horario                                                                                                                                                                       | Resuelto ✅                    |
+| 01EJ05 | Ampliación del Ej04 (nota: sin \*.dio)                                                                                                                                                                                                            | Resuelto ✅                    |
+| 01EJ06 | Crear una clase `Fruta` con variables privadas color, peso, esEstacional.                                                                                                                                                                         | Resuelto ✅                    |
+| 01EJ07 | Crear una clase `Ninja` con las variables privadas arteMarcial, arma, fuerza (entero) y salto (entero).                                                                                                                                           | Resuelto ✅                    |
+| 01EJ08 | ​Crear una clase `Persona` que tenga los atributos privados:                                                                                                                                                                                      | Resuelto ✅                    |
+| 01EJ09 | Modificar el Ej 08 y extender `Persona`                                                                                                                                                                                                           | Resuelto ✅                    |
+| 01EJ10 | Continuamos modificamos el EJ 08 ahora sobre escribimos el método `presentarse(): string {}`                                                                                                                                                      | Resuelto ✅                    |
+| 01EJ11 | Continuamos con modificaciones desde el **EJ08**                                                                                                                                                                                                  | Resuelto ✅                    |
+| 01EJ12 | Continuamos con modificaciones desde el **EJ08**                                                                                                                                                                                                  | Resuelto ✅                    |
+| 01EJ13 | ​El laboratorio Kokumo Technologies está desarrollando el prototipo de un robot explorador cuyo sistema de tracción puede ser personalizado para que se adapte mejor al terreno.                                                                  | Resuelto ✅                    |
+| 01EJ14 | Una empresa de seguridad que se dedica a la vigilancia mediante el empleo de drones, ha desarrollado un sistema de montaje que permitirá que los drones puedan cargar, además de la cámara de vigilancia, una herramienta accionable a distancia. | Resuelto ✅                    |
+| 01EJ15 | La Marina del reino de Caballito quiere desarrollar un sistema que le permita gestionar su flota de navíos                                                                                                                                        | ⏳ Pendiente                   |
+|      — | Los ejercicios se agregarán progresivamente                                                                                                                                                                                                       | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
+|      — | Los ejercicios se agregarán progresivamente                                                                                                                                                                                                       | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
+|      — | Los ejercicios se agregarán progresivamente                                                                                                                                                                                                       | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
+|      — | Los ejercicios se agregarán progresivamente                                                                                                                                                                                                       | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
+|      — | Los ejercicios se agregarán progresivamente                                                                                                                                                                                                       | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
+|      — | Los ejercicios se agregarán progresivamente                                                                                                                                                                                                       | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
+|      — | Los ejercicios se agregarán progresivamente                                                                                                                                                                                                       | ⏳ Pendiente ✅ ❌ `✅` y `❌` |
 
 ---
