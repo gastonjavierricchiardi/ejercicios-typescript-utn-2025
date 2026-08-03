@@ -1,5 +1,4 @@
 // \01EJ15_marina\navio\capacidades\interfaces.ts
-// falta determinar las interfaces queda para mas adelante
 
 // Los usados en  === GUERRA ===
 // lo usamos para los barcos de guerra
