@@ -16,7 +16,7 @@ class Persona {
     getNombre(): string { return this._nombre; }
     setNombre(nombre: string): void { this._nombre = nombre; }
 
-    getApellido(): string { return this._apellido = this._apellido; }
+    getApellido(): string { return this._apellido; }
     setApellido(apellido: string): void { this._apellido = apellido; }
 }
 
