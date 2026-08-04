@@ -6,18 +6,18 @@
 export {};
 
 class Persona {
-    public nombre: string
-    public apellido: string
+    public _nombre: string
+    public _apellido: string
 
     constructor(nombre: string, apellido: string) {
-        this.nombre = nombre;
-        this.apellido = apellido;
+        this._nombre = nombre;
+        this._apellido = apellido;
     }
-    getNombre(): string { return this.nombre; }
-    setNombre(nombre: string): void { this.nombre = nombre; }
+    getNombre(): string { return this._nombre; }
+    setNombre(nombre: string): void { this._nombre = nombre; }
 
-    getApellido(): string { return this.apellido; }
-    setApellido(apellido: string): void { this.apellido = apellido; }
+    getApellido(): string { return this._apellido; }
+    setApellido(apellido: string): void { this._apellido = apellido; }
 }
 
 function main(): void {
@@ -27,4 +27,4 @@ function main(): void {
 
 // Forma 2
 const persona = new Persona("Gastón", "Javier");
-console.log(`Nombre: ${persona.nombre}, Apellido: ${persona.apellido}`);
+console.log(`Nombre: ${persona._nombre}, Apellido: ${persona._apellido}`);
