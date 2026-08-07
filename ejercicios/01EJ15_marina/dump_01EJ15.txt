@@ -1,0 +1,353 @@
+PWD: /home/gaston/vcs/ejercicios-typescript-utn-2025/ejercicios/01EJ15_marina
+Fecha: 2026-08-06T23:27:36-03:00
+
+ARCHIVOS INCLUIDOS:
+ - ./01EJ15_index.ts
+ - ./flota/flota.ts
+ - ./navio/capacidades/interfaces.ts
+ - ./navio/guerra/acorazado.ts
+ - ./navio/guerra/destructor.ts
+ - ./navio/hospital/barcoHospital.ts
+ - ./navio/hospital/lanchaMedica.ts
+ - ./navio/navio.ts
+
+========================================
+
+===== ./01EJ15_index.ts =====
+     1	/**
+     2	 * \01EJ15_marina\01EJ15_index.ts
+     3	 * Nombre: String
+     4	 * Flotabilidad = 100 Máximo
+     5	 * Solidez = 100 Máximo
+     6	 * Estabilidad = 100 Máximo
+     7	 * VelocidadCrucero = 50 millas nauticas Máximo
+     8	 * === Guerra ===
+     9	 * (Todo lo Heredado) + 
+    10	 * potenciaFuego = 100 Máximo
+    11	 * maniobrabilidad = 100 máximo
+    12	 * velocidadMaxima = 65 % del máximo // jugamos con esto suponemos que es de guerra y no llega al 100
+    13	 */
+    14	// \01EJ15_marina\01EJ15_index.ts
+    15	import { Flota } from "./flota/flota";
+    16	import { Acorazado } from "./navio/guerra/acorazado";
+    17	import { Destructor } from "./navio/guerra/destructor";
+    18	import { BarcoHospital } from "./navio/hospital/barcoHospital";
+    19	import { LanchaMedica } from "./navio/hospital/lanchaMedica";
+    20	
+    21	function main(): void {
+    22	    console.log("===== Ejercicio NRO 15 (Marina del Reino de Caballito) =====");
+    23	
+    24	    const flota = new Flota();
+    25	
+    26	    // Acorazado: nombre, flotabilidad, solidez, estabilidad, velocidadCrucero, blindaje, potenciaFuego
+    27	    const laArgentina = new Acorazado("La Argentina", 95, 90, 85, 45, 88, 92);
+    28	
+    29	    // Destructor: nombre, flotabilidad, solidez, estabilidad, velocidadCrucero, potenciaFuego, maniobrabilidad, velocidadMaxima
+    30	    const elRayo = new Destructor("El Rayo", 90, 80, 78, 42, 85, 92, 60);
+    31	
+    32	    // Barco Hospital (Singleton): se obtiene con getInstance()
+    33	    const sibelancia = BarcoHospital.getInstance();
+    34	
+    35	    // Creación de lanchas médicas (la gaucha y el gaucho)
+    36	
+    37	    const laGaucha = new LanchaMedica("La gaucha", 95, 70, 40, 48, 55, true, 300);
+    38	    const elGaucho = new LanchaMedica("El gaucho", 95, 70, 40, 48, 55, true, 300);
+    39	
+    40	
+    41	    flota.agregarNavio(laArgentina);
+    42	    flota.agregarNavio(elRayo);
+    43	    flota.agregarNavio(sibelancia);
+    44	    // agregamos las lanchas médicas
+    45	    flota.agregarNavio(laGaucha);
+    46	    flota.agregarNavio(elGaucho);
+    47	
+    48	    flota.mostrarResumen();
+    49	
+    50	    // Prueba extra: datos propios del hospital (no están en el resumen común)
+    51	    console.log(`Hospital: ${sibelancia.getNombre()} | Capacidad: ${sibelancia.getCapacidadPacientes()} pacientes`);
+    52	
+    53	    // opcional: mostrar detalles propios de las lanchas
+    54	    console.log(`Lancha: ${laGaucha.getNombre()} | Motor FB: ${laGaucha.getMotorFueraBorda()} | Grua: ${laGaucha.getCapacidadGruaKg()}kg | Maniobrabilidad: ${laGaucha.getManiobrabilidad()}`);
+    55	    console.log(`Lancha: ${elGaucho.getNombre()} | Motor FB: ${elGaucho.getMotorFueraBorda()} | Grua: ${elGaucho.getCapacidadGruaKg()}kg | Maniobrabilidad: ${elGaucho.getManiobrabilidad()}`);
+    56	}
+    57	
+    58	main();
+
+===== ./flota/flota.ts =====
+     1	// \01EJ15_marina\flota\flota.ts
+     2	import { Navio } from "../navio/navio";
+     3	
+     4	export class Flota {
+     5	    private _navios: Navio[] = [];
+     6	
+     7	    public getNavios(): Navio[] { return this._navios; }
+     8	
+     9	
+    10	    public agregarNavio(navio: Navio): void {
+    11	        this._navios.push(navio);
+    12	    }
+    13	
+    14	    public cantidad(): number {
+    15	        return this._navios.length;
+    16	    }
+    17	
+    18	    public buscarPorNombre(nombre: string): Navio | undefined {
+    19	        return this._navios.find(n => n.getNombre() === nombre);
+    20	    }
+    21	
+    22	    // Muestra SOLO lo común del Navio (sin meterse con tipos concretos)
+    23	    public mostrarResumen(): void {
+    24	        console.log(`--- Flota (${this.cantidad()} navíos) ---`);
+    25	        for (const navio of this._navios) {
+    26	            console.log(
+    27	                `Nombre: ${navio.getNombre()} | ` +
+    28	                `Flotabilidad: ${navio.getFlotabilidad()} | ` +
+    29	                `Solidez: ${navio.getSolidez()} | ` +
+    30	                `Estabilidad: ${navio.getEstabilidad()} | ` +
+    31	                `Vel. Crucero: ${navio.getVelocidadCrucero()}`
+    32	            );
+    33	        }
+    34	    }
+    35	}
+
+===== ./navio/capacidades/interfaces.ts =====
+     1	// \01EJ15_marina\navio\capacidades\interfaces.ts
+     2	
+     3	// Los usados en  === GUERRA ===
+     4	// lo usamos para los barcos de guerra
+     5	export interface IArmado {
+     6	    getPotenciaFuego(): number;
+     7	    setPotenciaFuego(value: number): void;
+     8	}
+     9	
+    10	export interface IBlindado {
+    11	    getBlindaje(): number;
+    12	    setBlindaje(value: number): void;
+    13	}
+    14	
+    15	// Los usados en === Hospital ===
+    16	export interface IHospital {
+    17	    getCapacidadPacientes(): number;
+    18	    setCapacidadPacientes(value: number): void;
+    19	}
+    20	
+    21	// Los usados en === Lancha Médica ===
+    22	export interface IMotorFueraBorda {
+    23	    getMotorFueraBorda(): boolean;
+    24	    setMotorFueraBorda(value: boolean): void;
+    25	}
+    26	
+    27	export interface IConGrua {
+    28	    getCapacidadGruaKg(): number;
+    29	    setCapacidadGruaKg(value: number): void;
+    30	}
+
+===== ./navio/guerra/acorazado.ts =====
+     1	// \01EJ15_marina\navio\guerra\acorazado.ts
+     2	import { Navio } from "../navio";
+     3	import { IArmado, IBlindado } from "../capacidades/interfaces";
+     4	
+     5	export class Acorazado extends Navio implements IArmado, IBlindado {
+     6	    private _blindaje: number;
+     7	    private _potenciaFuego: number;
+     8	
+     9	    constructor(
+    10	        nombre: string,
+    11	        flotabilidad: number,
+    12	        solidez: number,
+    13	        estabilidad: number,
+    14	        velocidadCrucero: number,
+    15	        blindaje: number,
+    16	        potenciaFuego: number
+    17	    ) {
+    18	        super(nombre, flotabilidad, solidez, estabilidad, velocidadCrucero);
+    19	        this._blindaje = blindaje;
+    20	        this._potenciaFuego = potenciaFuego;
+    21	    }
+    22	    // IBlindado
+    23	    public getBlindaje(): number {
+    24	        return this._blindaje;
+    25	    }
+    26	    public setBlindaje(value: number): void {
+    27	        this._blindaje = value;
+    28	    }
+    29	    // IArmado
+    30	    public getPotenciaFuego(): number {
+    31	        return this._potenciaFuego;
+    32	    }
+    33	    public setPotenciaFuego(value: number): void {
+    34	        this._potenciaFuego = value;
+    35	    }
+    36	}
+
+===== ./navio/guerra/destructor.ts =====
+     1	// \01EJ15_marina\navio\guerra\destructor.ts
+     2	import { Navio } from "../navio";
+     3	import { IArmado } from "../capacidades/interfaces";
+     4	
+     5	export class Destructor extends Navio implements IArmado {
+     6	    private _potenciaFuego: number;
+     7	    private _maniobrabilidad: number;
+     8	    private _velocidadMaxima: number;
+     9	
+    10	    constructor(
+    11	        nombre: string,
+    12	        flotabilidad: number,
+    13	        solidez: number,
+    14	        estabilidad: number,
+    15	        velocidadCrucero: number,
+    16	        potenciaFuego: number,
+    17	        maniobrabilidad: number,
+    18	        velocidadMaxima: number
+    19	    ) {
+    20	        super(nombre, flotabilidad, solidez, estabilidad, velocidadCrucero);
+    21	        this._potenciaFuego = potenciaFuego;
+    22	        this._maniobrabilidad = maniobrabilidad;
+    23	        this._velocidadMaxima = velocidadMaxima;
+    24	    }
+    25	
+    26	    public getVelocidadMaxima(): number {
+    27	        return this._velocidadMaxima;
+    28	    }
+    29	
+    30	    public setVelocidadMaxima(value: number): void {
+    31	        this._velocidadMaxima = value;
+    32	    }
+    33	
+    34	    public getManiobrabilidad(): number {
+    35	        return this._maniobrabilidad;
+    36	    }
+    37	
+    38	    public setManiobrabilidad(value: number): void {
+    39	        this._maniobrabilidad = value;
+    40	    }
+    41	
+    42	    // IArmado
+    43	    public getPotenciaFuego(): number {
+    44	        return this._potenciaFuego;
+    45	    }
+    46	    public setPotenciaFuego(value: number): void {
+    47	        this._potenciaFuego = value;
+    48	    }
+    49	}
+
+===== ./navio/hospital/barcoHospital.ts =====
+     1	// \01EJ15_marina\navio\hospital\barcoHospital.ts
+     2	
+     3	import { Navio } from "../navio";
+     4	import { IHospital } from "../capacidades/interfaces";
+     5	
+     6	export class BarcoHospital extends Navio implements IHospital {
+     7	    private static _INSTANCE: BarcoHospital;
+     8	    private _capacidadPacientes: number;
+     9	
+    10	    public static getInstance(): BarcoHospital {
+    11	        if (!BarcoHospital._INSTANCE) {
+    12	            BarcoHospital._INSTANCE = new BarcoHospital();
+    13	        }
+    14	        return BarcoHospital._INSTANCE;
+    15	    }
+    16	
+    17	    private constructor() {
+    18	        // nombre fijo: "Sibelancia"
+    19	        // valores altos para flotabilidad/estabilidad (según enunciado)
+    20	        super("Sibelancia", 100, 80, 100, 35);
+    21	        this._capacidadPacientes = 75;
+    22	    }
+    23	
+    24	    // IHospital
+    25	    public getCapacidadPacientes(): number {
+    26	        return this._capacidadPacientes;
+    27	    }
+    28	
+    29	    public setCapacidadPacientes(value: number): void {
+    30	        this._capacidadPacientes = value;
+    31	    }
+    32	}
+
+===== ./navio/hospital/lanchaMedica.ts =====
+     1	// \01EJ15_marina\navio\hospital\lanchaMedica.ts
+     2	
+     3	import { Navio } from "../navio";
+     4	import { IMotorFueraBorda, IConGrua } from "../capacidades/interfaces";
+     5	
+     6	export class LanchaMedica extends Navio implements IMotorFueraBorda, IConGrua {
+     7	    private _maniobrabilidad: number;
+     8	    private _motorFueraBorda: boolean;
+     9	    private _capacidadGruaKg: number; // para 300Kg
+    10	
+    11	    constructor(
+    12	        nombre: string,
+    13	        flotabilidad: number,
+    14	        solidez: number,
+    15	        estabilidad: number,
+    16	        velocidadCrucero: number,
+    17	        maniobrabilidad: number,
+    18	        motorFueraBorda: boolean,
+    19	        capacidadGruaKg: number
+    20	    ) {
+    21	        super(nombre, flotabilidad, solidez, estabilidad, velocidadCrucero);
+    22	        this._maniobrabilidad = maniobrabilidad;
+    23	        this._motorFueraBorda = motorFueraBorda;
+    24	        this._capacidadGruaKg = capacidadGruaKg;
+    25	    }
+    26	
+    27	    public getManiobrabilidad(): number {
+    28	        return this._maniobrabilidad;
+    29	    }
+    30	
+    31	    public setManiobrabilidad(value: number): void {
+    32	        this._maniobrabilidad = value;
+    33	    }
+    34	
+    35	    public getMotorFueraBorda(): boolean {
+    36	        return this._motorFueraBorda;
+    37	    }
+    38	
+    39	    public setMotorFueraBorda(value: boolean): void {
+    40	        this._motorFueraBorda = value;
+    41	    }
+    42	
+    43	    public getCapacidadGruaKg(): number {
+    44	        return this._capacidadGruaKg;
+    45	    }
+    46	
+    47	    public setCapacidadGruaKg(value: number): void {
+    48	        this._capacidadGruaKg = value;
+    49	    }
+    50	}
+
+===== ./navio/navio.ts =====
+     1	// \01EJ15_marina\navio\navio.ts
+     2	
+     3	export abstract class Navio {
+     4	    private _nombre: string;
+     5	    private _flotabilidad: number; // 100 maximo
+     6	    private _solidez: number; // 100 maximo
+     7	    private _estabilidad: number; // 100 maximo
+     8	    private _velocidadCrucero: number; // 50 maximo (millas nauticas, no se bien.)
+     9	
+    10	    constructor(nombre: string, flotabilidad: number, solidez: number, estabilidad: number, velocidadCrucero: number) {
+    11	        this._nombre = nombre;
+    12	        this._flotabilidad = flotabilidad;
+    13	        this._solidez = solidez;
+    14	        this._estabilidad = estabilidad;
+    15	        this._velocidadCrucero = velocidadCrucero;
+    16	    }
+    17	
+    18	    public getNombre(): string { return this._nombre; }
+    19	    public setNombre(value: string): void { this._nombre = value; }
+    20	
+    21	    public getFlotabilidad(): number { return this._flotabilidad; }
+    22	    public setFlotabilidad(value: number): void { this._flotabilidad = value; }
+    23	
+    24	    public getSolidez(): number { return this._solidez; }
+    25	    public setSolidez(value: number): void { this._solidez = value; }
+    26	
+    27	    public getEstabilidad(): number { return this._estabilidad; }
+    28	    public setEstabilidad(value: number): void { this._estabilidad = value; }
+    29	
+    30	    public getVelocidadCrucero(): number { return this._velocidadCrucero; }
+    31	    public setVelocidadCrucero(value: number): void { this._velocidadCrucero = value; }
+    32	}
+

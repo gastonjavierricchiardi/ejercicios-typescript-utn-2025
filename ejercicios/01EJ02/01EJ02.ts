@@ -39,7 +39,7 @@ class Vehiculo {
 
 function main(): void {
     // creamos la instancia y asignamos valores.
-    const v1 = new Vehiculo("Chevrolet", "spin", "AD921HB")
+    const v1 = new Vehiculo("Chevrolet", "spin", "ZZ000RR")
 
     console.log(v1.marca);
     console.log(v1.modelo);
@@ -47,7 +47,7 @@ function main(): void {
     console.log(v1.get_Patente());
 
     // creamos un sergundo vehiculo.
-    const v2 = new Vehiculo("Ford", "K", "FMM164")
+    const v2 = new Vehiculo("Ford", "K", "ZZZ999")
 
     console.log(v2.marca);
     console.log(v2.modelo);
