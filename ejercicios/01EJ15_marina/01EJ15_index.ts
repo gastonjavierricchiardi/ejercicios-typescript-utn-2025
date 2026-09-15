@@ -29,8 +29,8 @@ function main(): void {
     // Destructor: nombre, flotabilidad, solidez, estabilidad, velocidadCrucero, potenciaFuego, maniobrabilidad, velocidadMaxima
     const elRayo = new Destructor("El Rayo", 90, 80, 78, 42, 85, 92, 60);
 
-    // Barco Hospital (Singleton): se obtiene con getInstance()
-    const sibelancia = BarcoHospital.getInstance();
+    // Creamos el único barco hospital de esta flota
+    const sibelancia = new BarcoHospital();
 
     // Creación de lanchas médicas (la gaucha y el gaucho)
 
@@ -47,10 +47,14 @@ function main(): void {
 
     flota.mostrarResumen();
 
-    // Prueba extra: datos propios del hospital (no están en el resumen común)
+    // Datos propios de los barcos de guerra
+    console.log(`Acorazado: ${laArgentina.getNombre()} | Blindaje: ${laArgentina.getBlindaje()} | Potencia de fuego: ${laArgentina.getPotenciaFuego()}`);
+    console.log(`Destructor: ${elRayo.getNombre()} | Potencia de fuego: ${elRayo.getPotenciaFuego()} | Maniobrabilidad: ${elRayo.getManiobrabilidad()} | Vel. máxima: ${elRayo.getVelocidadMaxima()}`);
+
+    // Datos propios del hospital
     console.log(`Hospital: ${sibelancia.getNombre()} | Capacidad: ${sibelancia.getCapacidadPacientes()} pacientes`);
 
-    // opcional: mostrar detalles propios de las lanchas
+    // Datos propios de las lanchas
     console.log(`Lancha: ${laGaucha.getNombre()} | Motor FB: ${laGaucha.getMotorFueraBorda()} | Grua: ${laGaucha.getCapacidadGruaKg()}kg | Maniobrabilidad: ${laGaucha.getManiobrabilidad()}`);
     console.log(`Lancha: ${elGaucho.getNombre()} | Motor FB: ${elGaucho.getMotorFueraBorda()} | Grua: ${elGaucho.getCapacidadGruaKg()}kg | Maniobrabilidad: ${elGaucho.getManiobrabilidad()}`);
 }
