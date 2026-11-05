@@ -13,22 +13,74 @@ Para ejecutar los ejercicios es necesario tener instalados Node.js y npm.
 Luego de clonar el repositorio, ubicarse en la carpeta raíz e instalar las dependencias:
 
 ```bash
-npm install
+npm ci
 ```
 
-Para ejecutar un ejercicio:
+Para verificar tipos sin generar archivos y compilar los archivos verificables:
 
 ```bash
-npx ts-node ejercicios/01EJ02/index.ts
+npm run typecheck
+npm run build
+```
+
+La compilación conserva las carpetas originales dentro de `dist/`. Por ejemplo:
+
+```bash
+node dist/ejercicios/01EJ02/01EJ02_index.js
+```
+
+Para ejecutar directamente un ejercicio TypeScript:
+
+```bash
+npm run ejercicio -- ejercicios/01EJ02/01EJ02_index.ts
 ```
 
 El repositorio incluye los siguientes archivos de configuración:
 
 - `package.json`: define las dependencias y los datos generales del proyecto.
 - `package-lock.json`: conserva las versiones exactas instaladas.
-- `tsconfig.json`: contiene la configuración de TypeScript.
+- `tsconfig.json`: configuración estricta común que incluye `ejercicios/` y
+  `dictadoDeClases/`. Solo requiere tipos de Node y da preferencia a fuentes `.ts`
+  durante la ejecución con `ts-node`, aunque existan archivos `.js` vecinos.
+- `tsconfig.verificables.json`: selección para `typecheck` y `build`, separando
+  los ejemplos con errores de compilación conocidos. Que un archivo compile no
+  significa que su ejercicio esté completo ni que su lógica esté verificada.
+- `tsconfig.ejemplos.json`: selección de los ejemplos negativos e incompletos,
+  con las mismas comprobaciones estrictas y sin generar archivos.
 
-La carpeta `node_modules` se genera automáticamente mediante `npm install` y no se incluye en el repositorio.
+### Ejemplos negativos e incompletos
+
+```bash
+npm run typecheck:ejemplos
+npm run typecheck:all
+```
+
+Ambos comandos devuelven un código de salida distinto de cero mientras existan
+errores. El primero revisa la selección separada y el segundo todo el código de
+las dos carpetas, sin las exclusiones de `tsconfig.verificables.json`. Los errores
+sintácticos pueden impedir que el compilador muestre otros diagnósticos en esa
+misma ejecución. No se omiten comprobaciones de tipos ni se modifica el código
+para hacer pasar estos comandos.
+
+Los casos separados, identificados en AUD-TS-01, son:
+
+| Caso | Motivo de separación |
+| --- | --- |
+| `01EJ03/index_01ej03.ts` | Demostración deliberada de acceso rechazado a atributos privados |
+| `01EJ06/prueba/index_fruta.ts` | Variante experimental con propiedades incompatibles con su clase |
+| Clase 04 | Imports cuya capitalización no coincide con `Persona.ts` |
+| Clases 06 y 08, Marina | Inicialización de atributos no aceptada por `strict`; en clase 08 se conserva la comprobación de `indexColecciones.ts` |
+| Clase 10, Micros | Código incompleto con errores sintácticos y de tipos |
+| Clase 14, `SegregationInterface/` | Calculadoras incompletas; el resto de SOLID sigue incluido |
+| Clase 17, `myLista.ts` e `index.ts` | Errores en el uso de genéricos |
+| Clase 19, Factory Method e `index.ts` | Inicialización de atributos e import de Singleton incorrecto; la clase Singleton sigue incluida |
+
+La lista de exclusiones y la selección de ejemplos deben mantenerse alineadas.
+Al corregir un caso en una etapa posterior, se debe reincorporar a la selección
+verificable. No hay una suite de pruebas automatizadas configurada: estos comandos
+comprueban tipos; las comprobaciones funcionales requieren ejecutar cada ejemplo.
+
+La carpeta `node_modules` se genera automáticamente mediante `npm ci` y no se incluye en el repositorio. Los archivos compilados quedan en `dist/`, también ignorado por Git. `noEmitOnError` impide generar una compilación parcial cuando hay errores; no elimina salidas de compilaciones anteriores.
 
 ## Organización
 

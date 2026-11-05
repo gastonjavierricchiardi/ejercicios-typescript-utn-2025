@@ -1,0 +1,21 @@
+{
+    "extends": "./tsconfig.json",
+    "exclude": [
+        "dist",
+        "node_modules",
+        "fixtures",
+        "tmp",
+        "ejercicios/01EJ03/index_01ej03.ts",
+        "ejercicios/01EJ06/prueba/index_fruta.ts",
+        "dictadoDeClases/Clase 04-20250822/**/*.ts",
+        "dictadoDeClases/Clase 06-20250829_MarinaDeCaballito/**/*.ts",
+        "dictadoDeClases/Clase 08-20250905_MarinaDeCaballito/Guia_15/**/*.ts",
+        "dictadoDeClases/Clase 08-20250905_MarinaDeCaballito/index.ts",
+        "dictadoDeClases/Clase 10-20250912_Micros/**/*.ts",
+        "dictadoDeClases/Clase 14-20251003/Solid/SegregationInterface/**/*.ts",
+        "dictadoDeClases/Clase 17-20251014/EstructurasDinamicas/myLista.ts",
+        "dictadoDeClases/Clase 17-20251014/index.ts",
+        "dictadoDeClases/Clase 19-20251021/Patrones/FactoryMethod/**/*.ts",
+        "dictadoDeClases/Clase 19-20251021/index.ts"
+    ]
+}

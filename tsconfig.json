@@ -3,8 +3,9 @@
         "target": "ES2022",
         "module": "commonjs",
         "moduleResolution": "node",
-        "rootDir": "./src",
+        "rootDir": ".",
         "outDir": "./dist",
+        "noEmitOnError": true,
         "sourceMap": true,
         "removeComments": true,
         "esModuleInterop": true,
@@ -15,17 +16,20 @@
         "experimentalDecorators": true,
         "forceConsistentCasingInFileNames": true,
         "types": [
-            "node",
-            "jest"
+            "node"
         ]
     },
     "include": [
-        "src/**/*"
+        "ejercicios/**/*.ts",
+        "dictadoDeClases/**/*.ts"
     ],
     "exclude": [
         "dist",
         "node_modules",
         "fixtures",
         "tmp"
-    ]
+    ],
+    "ts-node": {
+        "preferTsExts": true
+    }
 }
