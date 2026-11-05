@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "type": "commonjs",
+  "scripts": {
+    "build": "tsc -p tsconfig.verificables.json",
+    "typecheck": "tsc --noEmit -p tsconfig.verificables.json",
+    "typecheck:ejemplos": "tsc --noEmit -p tsconfig.ejemplos.json",
+    "typecheck:all": "tsc --noEmit -p tsconfig.json",
+    "ejercicio": "ts-node"
+  },
   "devDependencies": {
     "@types/node": "^20.0.0",
     "ts-node": "^10.9.2",
