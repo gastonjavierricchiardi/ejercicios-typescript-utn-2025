@@ -10,26 +10,23 @@ export default class Fruta {
     private _peso: number = 0;
     private _esEstacional: boolean = false; // falso no es de estación
 
-    /**
-     * El Ejercicio pide multiples instancias por lo que suponemos que puede haber
-     * multiples constructores.
-     */
-    // constructor(); // Firma del constructor
-    // constructor(color: string, peso: number, esEstacional: boolean);
+    // Dos formas públicas de construcción, igual que en la variante principal.
+    constructor();
+    constructor(color: string, peso: number, esEstacional: boolean);
     constructor(
         color?: string,
         peso?: number,
         esEstacional?: boolean
     ) {
-        this._color = color ?? "";
-        this._peso = peso ?? 0;
-        this._esEstacional = esEstacional ?? false;
+        this.setColor(color ?? "");
+        this.setPeso(peso ?? 0);
+        this.setEsEstacional(esEstacional ?? false);
     }
     public getColor(): string { return this._color; }
     public setColor(value: string) { this._color = value.trim(); }
 
     public getPeso(): number { return this._peso; }
-    public setPeso(value: number) { this._peso = value; }
+    public setPeso(value: number) { this._peso = value >= 0 ? value : 0; }
 
     public getEsEstacional(): boolean { return this._esEstacional; }
     public setEsEstacional(value: boolean) { this._esEstacional = value; }

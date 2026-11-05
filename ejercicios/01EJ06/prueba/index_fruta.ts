@@ -11,27 +11,27 @@ function main() {
     // vamos armando el lote de pruebas de lo solicitado
     // A) crear con valores (constructor con parametros)
     const frutaA = new Fruta("Roja", 150, true);
-    console.log("Fruta A --->", frutaA.color, frutaA.peso, "gramos.", "Estacional:", frutaA.esEstacional)
+    console.log("Fruta A --->", frutaA.getColor(), frutaA.getPeso(), "gramos.", "Estacional:", frutaA.getEsEstacional())
     // esperamos: true (150 < 200 y es de estación)
     console.log("Fruta A ---> es comestible?", frutaA.esComestible());
 
     // B) Creamos la instancia sin valores y asignamos a posterior (constructor vacio)
     const frutaB = new Fruta();
-    frutaB.color = "Verde";
-    frutaB.peso = 220
-    frutaB.esEstacional = true;
-    console.log("Fruta B --->", frutaB.color, frutaB.peso, "gramos", "Estacional:", frutaB.esEstacional);
+    frutaB.setColor("Verde");
+    frutaB.setPeso(220);
+    frutaB.setEsEstacional(true);
+    console.log("Fruta B --->", frutaB.getColor(), frutaB.getPeso(), "gramos", "Estacional:", frutaB.getEsEstacional());
     // Esperado false (220 no es < 200)
     console.log("Fruta B es comestible?", frutaB.esComestible());
 
     // C) crear con valores (constructor con parametros)
     const frutaC = new Fruta("Verde", 201, true);
-    console.log("Fruta C --->", frutaC.color, frutaC.peso, "gramos.", "Estacional:", frutaC.esEstacional)
+    console.log("Fruta C --->", frutaC.getColor(), frutaC.getPeso(), "gramos.", "Estacional:", frutaC.getEsEstacional())
     console.log("Fruta C ---> es comestible?", frutaC.esComestible());
 
     // D) peso < 200 pero NO es estacional
     const frutaD = new Fruta("Amarilla", 150, false);
-    console.log("Fruta D --->", frutaD.color, frutaD.peso, "gramos.", "Estacional:", frutaD.esEstacional);
+    console.log("Fruta D --->", frutaD.getColor(), frutaD.getPeso(), "gramos.", "Estacional:", frutaD.getEsEstacional());
     // Esperado false (pesa < 200 pero NO es de estación)
     console.log("Fruta D ---> es comestible?", frutaD.esComestible());
 
