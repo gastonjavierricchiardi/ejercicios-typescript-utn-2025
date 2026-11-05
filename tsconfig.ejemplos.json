@@ -5,7 +5,6 @@
     },
     "include": [
         "ejercicios/01EJ03/index_01ej03.ts",
-        "ejercicios/01EJ06/prueba/index_fruta.ts",
         "dictadoDeClases/Clase 04-20250822/**/*.ts",
         "dictadoDeClases/Clase 06-20250829_MarinaDeCaballito/**/*.ts",
         "dictadoDeClases/Clase 08-20250905_MarinaDeCaballito/Guia_15/**/*.ts",

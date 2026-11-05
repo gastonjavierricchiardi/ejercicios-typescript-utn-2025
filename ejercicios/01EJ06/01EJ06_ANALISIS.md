@@ -8,6 +8,38 @@
 
 ---
 
+## Cierre AUD-TS-03
+
+Las dos variantes cumplen la misma consigna: la principal usa propiedades `get/set`
+y `prueba/` conserva métodos `getColor/setColor`, `getPeso/setPeso` y
+`getEsEstacional/setEsEstacional`. Ambas admiten construcción vacía o con los tres
+argumentos. Los constructores delegan en los setters: el color se recorta con
+`trim()` y el peso negativo se normaliza a cero, conservando la decisión de la
+solución principal. Sin argumentos, los valores son `""`, `0` y `false`.
+
+La condición sigue siendo `peso < 200 && esEstacional`: 200 no es comestible;
+0 sí lo es si es estacional. No se añade una condición de peso positivo ajena al
+enunciado. Un peso negativo normalizado a cero sigue esa misma regla.
+
+Desde la raíz del repositorio:
+
+```bash
+npm run typecheck
+npm run build
+npm run ejercicio -- ejercicios/01EJ06/index_01EJ06.ts
+npm run ejercicio -- ejercicios/01EJ06/prueba/index_fruta.ts
+npm run ejercicio -- ejercicios/01EJ06/prueba/verificar_fruta.ts
+```
+
+`verificar_fruta.ts` usa aserciones de Node, sin dependencias adicionales. Comprueba
+ambas variantes con pesos 0, 150, 199, 200, 201 y -10, fruta no estacional,
+construcción vacía, setters, espacios en el color e independencia de instancias.
+La variante experimental se reincorpora a `tsconfig.verificables.json` y se retira
+de `tsconfig.ejemplos.json`. Las notas siguientes se conservan como historial:
+los errores del constructor y del caso C allí descritos ya estaban corregidos.
+
+---
+
 ## primer análisis
 
 En la cursada, pensá el **constructor** como “el momento de nacimiento del objeto”: el lugar donde garantizás que el objeto arranca con un estado válido (o al menos definido).

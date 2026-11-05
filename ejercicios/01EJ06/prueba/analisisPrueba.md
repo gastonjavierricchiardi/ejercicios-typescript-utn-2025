@@ -1,3 +1,14 @@
+## Estado actual — AUD-TS-03
+
+La incompatibilidad descrita abajo está corregida: `index_fruta.ts` usa los
+métodos de esta variante. Se conservan ambas formas académicas de getters y
+setters, sin reemplazar la solución principal. Esta variante también declara las
+dos firmas del constructor y usa sus setters al construir, con las mismas reglas
+de color y peso que la principal. Las pruebas y los comandos están en la sección
+«Cierre AUD-TS-03» de `../01EJ06_ANALISIS.md`.
+
+## Diagnóstico histórico
+
 1. **Con el `index` que ya tenés, la primera clase es la correcta.**
    Ese `index` usa propiedades:
 

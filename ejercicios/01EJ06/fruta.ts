@@ -11,10 +11,9 @@ export default class Fruta {
     constructor(color: string, peso: number, esEstacional: boolean); // Constructor 1
     constructor(color?: string, peso?: number, _esEstacional?: boolean) { // Constructor 2 con singno de "?" porque puede recibir cualquiera
         // Valores por defecto por si no tiene argumentos
-        this._color = color ?? "";
-        this._peso = peso ?? 0;
-        //this._esEstacional = this._esEstacional ?? false; corregido CHATGPT
-        this._esEstacional = _esEstacional ?? false;
+        this.color = color ?? "";
+        this.peso = peso ?? 0;
+        this.esEstacional = _esEstacional ?? false;
     }
     // Opción 1 podemos validar en los setters el enunciado no lo pide
     // === PROPIEDADES ===
