@@ -28,13 +28,16 @@ export default class Ninja {
     public setArma(v: string): void { this._arma = v };
 
     public getFuerza(): number { return this._fuerza };
-    public setFuerza(v: number): void { this._fuerza = v > 0 ? v : 1 };
+    public setFuerza(v: number): void { this._fuerza = Number.isInteger(v) && v > 0 ? v : 1 };
 
     public getSalto(): number { return this._salto };
-    public setSalto(v: number): void { this._salto = v > 0 ? v : 1 };
+    public setSalto(v: number): void { this._salto = Number.isInteger(v) && v > 0 ? v : 1 };
 
     // * 4) MÉTODOS
     public saltar(multiplicador: number): number {
+        if (!Number.isInteger(multiplicador)) {
+            throw new RangeError("El multiplicador debe ser un entero.");
+        }
         return this._salto * multiplicador;
     }
     public ataque(): string {
