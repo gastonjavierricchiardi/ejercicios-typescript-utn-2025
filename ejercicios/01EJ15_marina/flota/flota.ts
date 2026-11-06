@@ -1,13 +1,17 @@
 // \01EJ15_marina\flota\flota.ts
 import { Navio } from "../navio/navio";
+import { BarcoHospital } from "../navio/hospital/barcoHospital";
 
 export class Flota {
     private _navios: Navio[] = [];
 
-    public getNavios(): Navio[] { return this._navios; }
+    public getNavios(): Navio[] { return [...this._navios]; }
 
 
     public agregarNavio(navio: Navio): void {
+        if (navio instanceof BarcoHospital && this._navios.some(n => n instanceof BarcoHospital)) {
+            throw new Error("La flota ya tiene un barco hospital.");
+        }
         this._navios.push(navio);
     }
 
