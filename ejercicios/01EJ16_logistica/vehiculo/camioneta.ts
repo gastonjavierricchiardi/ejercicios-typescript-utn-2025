@@ -1,20 +1,25 @@
-// \src\01EJXX\01EJ16_logistica\vehiculo\camioneta.ts
 import { Vehiculo } from "./vehiculo";
-import { CriterioCamioneta } from "../criterio/criterioCamioneta";
 import { Item } from "../item/item";
+import Comoda from "../item/comoda";
+import Heladera from "../item/heladera";
+import Lavarropas from "../item/lavarropas";
 
 export default class Camioneta extends Vehiculo {
+    private static readonly _capacidadMaxima: number = 10;
+
     constructor() {
-        super(10, new CriterioCamioneta());
+        super();
     }
 
     public cargar(item: Item): void {
-        const ok = this.intentarCargar(item);
-        console.log(ok ? "Camioneta: item cargado" : "Camioneta: no se pudo cargar");
-    }
-
-    public listarItems(): void {
-        console.log("--- Carga de la camioneta ---");
-        this.listarItemsBase();
+        if (this.tieneCapacidad(Camioneta._capacidadMaxima)) {
+            if (item instanceof Comoda) {
+                this.agregarElemento(item);
+            } else if (item instanceof Heladera) {
+                this.agregarElemento(item);
+            } else if (item instanceof Lavarropas) {
+                this.agregarElemento(item);
+            }
+        }
     }
 }

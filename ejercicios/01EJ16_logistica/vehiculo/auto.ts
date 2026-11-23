@@ -1,20 +1,25 @@
-// \src\01EJXX\01EJ16_logistica\vehiculo\auto.ts 
 import { Vehiculo } from "./vehiculo";
-import { CriterioAuto } from "../criterio/criterioAuto";
 import { Item } from "../item/item";
+import Televisor from "../item/televisor";
+import Bicicleta from "../item/bicicleta";
+import CajaPequena from "../item/cajaPequena";
 
 export default class Auto extends Vehiculo {
+    private static readonly _capacidadMaxima: number = 5;
+
     constructor() {
-        super(5, new CriterioAuto());
+        super();
     }
 
     public cargar(item: Item): void {
-        const ok = this.intentarCargar(item);
-        console.log(ok ? "Auto: item cargado" : "Auto: no se pudo cargar");
-    }
-
-    public listarItems(): void {
-        console.log("--- Carga del auto ---");
-        this.listarItemsBase();
+        if (this.tieneCapacidad(Auto._capacidadMaxima)) {
+            if (item instanceof Televisor) {
+                this.agregarElemento(item);
+            } else if (item instanceof Bicicleta && item.getEsPlegable()) {
+                this.agregarElemento(item);
+            } else if (item instanceof CajaPequena) {
+                this.agregarElemento(item);
+            }
+        }
     }
 }

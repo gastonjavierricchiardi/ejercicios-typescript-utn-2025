@@ -1,21 +1,19 @@
-// \src\01EJXX\01EJ16_logistica\item\heladera.ts
-
 import { Item } from "./item";
-import { Dimensiones } from "../dimensiones/dimensiones";
-import { IConVoltaje } from "../interfaces/IConVoltaje";
 
-export default class Heladera extends Item implements IConVoltaje {
+export default class Heladera extends Item {
     private _voltaje: number;
     private _poseeFreezer: boolean;
 
     constructor(
-        id: number,
         descripcion: string,
-        dimensiones: Dimensiones,
+        alto: number,
+        ancho: number,
+        profundidad: number,
+        numeroIdentificador: number,
         voltaje: number,
         poseeFreezer: boolean
     ) {
-        super(id, descripcion, dimensiones);
+        super(descripcion, alto, ancho, profundidad, numeroIdentificador);
         this._voltaje = voltaje;
         this._poseeFreezer = poseeFreezer;
     }
@@ -23,15 +21,8 @@ export default class Heladera extends Item implements IConVoltaje {
     public getVoltaje(): number {
         return this._voltaje;
     }
-    public setVoltaje(value: number): void {
-        this._voltaje = value;
-    }
 
     public getPoseeFreezer(): boolean {
         return this._poseeFreezer;
     }
-    public setPoseeFreezer(value: boolean): void {
-        this._poseeFreezer = value;
-    }
-
 }
