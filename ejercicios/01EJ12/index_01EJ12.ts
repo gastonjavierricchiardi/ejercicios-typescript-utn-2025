@@ -11,35 +11,24 @@ import Visitante from "./visitante";
 import Guardia from "./guardia";
 
 function main(): void {
-    console.log("===== EJ 08-09: Instancias y datos (getters) =====");
+    const persona1 = new Persona();
+    persona1.setNombre("Gastón");
+    persona1.setApellido("Ricchiardi");
 
-    // PERSONA
-    const per0 = new Persona("Tiago", "Gael");
-    console.log("Persona ->", "Nombre:", per0.getNombre(), "| Apellido:", per0.getApellido());
+    const visitante1 = new Visitante();
+    visitante1.setNombre("Desirée");
+    visitante1.setApellido("Candelaria");
+    visitante1.setDni(12345678);
 
-    // GUARDIA
-    const per1 = new Guardia("Desirée", "Lis");
-    console.log("Guardia ->", "Nombre:", per1.getNombre(), "| Apellido:", per1.getApellido());
+    const guardia1 = new Guardia();
+    guardia1.setNombre("Carlos");
+    guardia1.setApellido("Gómez");
 
-    // VISITANTE (EJ 11: incluye DNI)
-    const per2 = new Visitante("Gastón", "Javier", 11222333444);
-    console.log(
-        "Visitante ->",
-        "Nombre:", per2.getNombre(),
-        "| Apellido:", per2.getApellido(),
-        "| DNI:", per2.getDni()
-    );
-
-    console.log("\n===== EJ 10: presentarse() (Guardia override) =====");
-    console.log("Persona.presentarse()   ->", per0.presentarse());
-    console.log("Guardia.presentarse()   ->", per1.presentarse());
-    console.log("Visitante.presentarse() ->", per2.presentarse());
-
-    console.log("\n===== EJ 11: controlarDocumento(dni) =====");
-    console.log("Control ->", per1.controlarDocumentoPorDni(per2.getDni()));
-
-    console.log("\n===== EJ 12: controlarDocumento(visitante) =====");
-    console.log("Control ->", per1.controlarDocumento(per2));
+    console.log(persona1.presentarse());
+    console.log(visitante1.presentarse());
+    console.log(guardia1.presentarse());
+    console.log(`DNI: ${visitante1.getDni()}`);
+    console.log(guardia1.controlarDocumento(visitante1));
 }
 
 main();

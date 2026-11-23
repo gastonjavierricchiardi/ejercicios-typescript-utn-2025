@@ -2,23 +2,12 @@
 
 export default class Ninja {
     // * 1) ATRIBUTOS
-    private _arteMarcial: string;
-    private _arma: string;
-    private _fuerza: number = 1;
-    private _salto: number = 1;
+    private _arteMarcial: string = "";
+    private _arma: string = "";
+    private _fuerza: number = 0;
+    private _salto: number = 0;
 
-    // * 2) CONSTRUCTOR CON VALIDACIÓN
-    constructor(
-        arte: string,
-        arma: string,
-        fuerza: number,
-        salto: number
-    ) {
-        this._arteMarcial = arte;
-        this._arma = arma;
-        this.setFuerza(fuerza);
-        this.setSalto(salto);
-    }
+    // * 2) CONSTRUCTOR VACÍO IMPLÍCITO
 
     // * 3) PROPIEDADES
     public getArteMarcial(): string { return this._arteMarcial };
@@ -28,19 +17,19 @@ export default class Ninja {
     public setArma(v: string): void { this._arma = v };
 
     public getFuerza(): number { return this._fuerza };
-    public setFuerza(v: number): void { this._fuerza = Number.isInteger(v) && v > 0 ? v : 1 };
+    public setFuerza(v: number): void { this._fuerza = v };
 
     public getSalto(): number { return this._salto };
-    public setSalto(v: number): void { this._salto = Number.isInteger(v) && v > 0 ? v : 1 };
+    public setSalto(v: number): void { this._salto = v };
 
     // * 4) MÉTODOS
-    public saltar(multiplicador: number): number {
-        if (!Number.isInteger(multiplicador)) {
-            throw new RangeError("El multiplicador debe ser un entero.");
-        }
-        return this._salto * multiplicador;
+    public saltar(multiplicador: number): void {
+        console.log(this._salto * multiplicador);
     }
-    public ataque(): string {
-        return `Arma: ${this._arma} | Arte marcial: ${this._arteMarcial}`;
+    public ataque(): void {
+        console.log(`Arma: ${this._arma} - Arte marcial: ${this._arteMarcial}`);
     }
+
+    // SRP: la clase combina lógica de negocio e impresión en pantalla.
+    // Se mantiene así porque la consigna pide que ambos métodos impriman directamente.
 }

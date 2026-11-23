@@ -34,7 +34,6 @@ function main(): void {
     const robot1 = new Robot("KT-2020-P", 10, new Rcaucho());
 
     // Con Rueda de caucho
-    robot1.setTraccionActual(new Rcaucho());
     console.log("\n--- Con Rueda de caucho ---");
     console.log(robot1.reporte());
 
@@ -44,10 +43,6 @@ function main(): void {
     console.log("\n--- Con Oruga ---");
     console.log(robot1.reporte());
 
-    // Aumento de la temperatura (como si lo estuviera midiendo)
-    sensor1.setTempActual(50);
-    console.log("--- Nueva toma ---");
-    console.log(robot1.reporte());
 }
 
 main();

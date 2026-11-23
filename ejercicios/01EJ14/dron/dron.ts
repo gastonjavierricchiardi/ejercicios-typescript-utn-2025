@@ -19,7 +19,7 @@ export class Dron {
         this._herramientaActual = herramientaActual;
     }
 
-    // 4) MÉTODOS (Comportamiento) - por ahora placeholder
+    // 4) MÉTODOS (Comportamiento)
     tipoHerramienta(): string {
         return this._herramientaActual.tipo();
     }
@@ -55,8 +55,8 @@ export class Dron {
     reporte(): string {
         let reporte = "";
         reporte += `Herramienta: ${this.tipoHerramienta()}\n`;
-        reporte += `Velocidad: ${this.velocidadActual()} mts/s\n`;
-        reporte += `Altura: ${this.alturaActual()} mts\n`;
+        reporte += `Velocidad: ${this.velocidadActual()} m/s\n`;
+        reporte += `Altura: ${this.alturaActual()} m\n`;
         return reporte;
     }
 }

@@ -1,49 +1,30 @@
-// \01EJ15_marina\navio\guerra\destructor.ts
+// ejercicios/01EJ15_marina/navio/guerra/destructor.ts
 import { Navio } from "../navio";
-import { IArmado } from "../capacidades/interfaces";
 
-export class Destructor extends Navio implements IArmado {
-    private _potenciaFuego: number;
-    private _maniobrabilidad: number;
-    private _velocidadMaxima: number;
+export class Destructor extends Navio {
+    private _solidez: string;
+    private _potenciaFuego: string;
+    private _maniobrabilidad: string;
+    private _velocidadCrucero: number;
 
     constructor(
         nombre: string,
-        flotabilidad: number,
-        solidez: number,
-        estabilidad: number,
-        velocidadCrucero: number,
-        potenciaFuego: number,
-        maniobrabilidad: number,
-        velocidadMaxima: number
+        flotabilidad: string,
+        estabilidad: string,
+        solidez: string,
+        potenciaFuego: string,
+        maniobrabilidad: string,
+        velocidadCrucero: number
     ) {
-        super(nombre, flotabilidad, solidez, estabilidad, velocidadCrucero);
+        super(nombre, flotabilidad, estabilidad);
+        this._solidez = solidez;
         this._potenciaFuego = potenciaFuego;
         this._maniobrabilidad = maniobrabilidad;
-        this._velocidadMaxima = velocidadMaxima;
+        this._velocidadCrucero = velocidadCrucero;
     }
 
-    public getVelocidadMaxima(): number {
-        return this._velocidadMaxima;
-    }
-
-    public setVelocidadMaxima(value: number): void {
-        this._velocidadMaxima = value;
-    }
-
-    public getManiobrabilidad(): number {
-        return this._maniobrabilidad;
-    }
-
-    public setManiobrabilidad(value: number): void {
-        this._maniobrabilidad = value;
-    }
-
-    // IArmado
-    public getPotenciaFuego(): number {
-        return this._potenciaFuego;
-    }
-    public setPotenciaFuego(value: number): void {
-        this._potenciaFuego = value;
-    }
+    public getSolidez(): string { return this._solidez; }
+    public getPotenciaFuego(): string { return this._potenciaFuego; }
+    public getManiobrabilidad(): string { return this._maniobrabilidad; }
+    public getVelocidadCrucero(): number { return this._velocidadCrucero; }
 }

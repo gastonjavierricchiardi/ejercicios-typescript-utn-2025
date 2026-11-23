@@ -1,4 +1,4 @@
-/** \01EJ08\index_01EJ10.ts
+/** \01EJ10\index_01EJ10.ts
 10. ​Continuando con el ejemplo anterior, realizar las siguientes modificaciones:
 
 - Agregar en Persona el método presentarse() que devuelva nombre y apellido de la persona.
@@ -9,27 +9,25 @@
 */
 
 import Persona from "./persona";
-import Visitante from "./visitante"
-import Guardia from "./guardia"
+import Visitante from "./visitante";
+import Guardia from "./guardia";
 
 function main(): void {
-    console.log(`===== vamos a presentar cada una con una función desde PERSONA =====`);
-    // PERSONA
-    const per0 = new Persona("Tiago", "Gael");
-    console.log(`En Persona = Nombre:`, per0.getNombre(), `- Apellido:`, per0.getApellido());
+    const persona1 = new Persona();
+    persona1.setNombre("Gastón");
+    persona1.setApellido("Ricchiardi");
 
-    // GUARDIA
-    const per1 = new Guardia("Desirée", "Lis");
-    console.log(`En Guardia = Nombre:`, per1.getNombre(), `- Apellido:`, per1.getApellido());
+    const visitante1 = new Visitante();
+    visitante1.setNombre("Desirée");
+    visitante1.setApellido("Candelaria");
 
-    // VISITANTE
-    const per2 = new Visitante("Gastón", "Javier")
-    console.log(`En Visitante = Nombre:`, per2.getNombre(), `- Apellido:`, per2.getApellido());
+    const guardia1 = new Guardia();
+    guardia1.setNombre("Carlos");
+    guardia1.setApellido("Gómez");
 
-    console.log(`===== vamos a presentar SOBREESCRIBIENDO EN GUARDIA =====`);
-    console.log(per0.presentarse());
-    console.log(per1.presentarse());
-    console.log(per2.presentarse());
+    console.log(persona1.presentarse());
+    console.log(visitante1.presentarse());
+    console.log(guardia1.presentarse());
 }
 
 main();

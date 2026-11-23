@@ -1,62 +1,62 @@
-/**
- * \01EJ15_marina\01EJ15_index.ts
- * Nombre: String
- * Flotabilidad = 100 Máximo
- * Solidez = 100 Máximo
- * Estabilidad = 100 Máximo
- * VelocidadCrucero = 50 millas nauticas Máximo
- * === Guerra ===
- * (Todo lo Heredado) + 
- * potenciaFuego = 100 Máximo
- * maniobrabilidad = 100 máximo
- * velocidadMaxima = 65 % del máximo // jugamos con esto suponemos que es de guerra y no llega al 100
- */
-// \01EJ15_marina\01EJ15_index.ts
-import { Flota } from "./flota/flota";
+// ejercicios/01EJ15_marina/01EJ15_index.ts
 import { Acorazado } from "./navio/guerra/acorazado";
 import { Destructor } from "./navio/guerra/destructor";
 import { BarcoHospital } from "./navio/hospital/barcoHospital";
 import { LanchaMedica } from "./navio/hospital/lanchaMedica";
 
 function main(): void {
-    console.log("===== Ejercicio NRO 15 (Marina del Reino de Caballito) =====");
+    const acorazado = new Acorazado("Ara Caballito", "Alta", "Alta", "Alta", "Pesado", "Alta", 25);
+    console.log("ACORAZADO");
+    console.log(`Nombre           : ${acorazado.getNombre()}`);
+    console.log(`Flotabilidad     : ${acorazado.getFlotabilidad()}`);
+    console.log(`Estabilidad      : ${acorazado.getEstabilidad()}`);
+    console.log(`Solidez          : ${acorazado.getSolidez()}`);
+    console.log(`Blindaje         : ${acorazado.getBlindaje()}`);
+    console.log(`Potencia de fuego: ${acorazado.getPotenciaFuego()}`);
+    console.log(`Velocidad crucero: ${acorazado.getVelocidadCrucero()}`);
 
-    const flota = new Flota();
+    console.log();
 
-    // Acorazado: nombre, flotabilidad, solidez, estabilidad, velocidadCrucero, blindaje, potenciaFuego
-    const laArgentina = new Acorazado("La Argentina", 95, 90, 85, 45, 88, 92);
+    const destructor = new Destructor("ARA Demoledor", "Alta", "Alta", "Alta", "Alta", "Muy alta", 30);
+    console.log("DESTRUCTOR");
+    console.log(`Nombre           : ${destructor.getNombre()}`);
+    console.log(`Flotabilidad     : ${destructor.getFlotabilidad()}`);
+    console.log(`Estabilidad      : ${destructor.getEstabilidad()}`);
+    console.log(`Solidez          : ${destructor.getSolidez()}`);
+    console.log(`Potencia de fuego: ${destructor.getPotenciaFuego()}`);
+    console.log(`Maniobrabilidad  : ${destructor.getManiobrabilidad()}`);
+    console.log(`Velocidad crucero: ${destructor.getVelocidadCrucero()}`);
 
-    // Destructor: nombre, flotabilidad, solidez, estabilidad, velocidadCrucero, potenciaFuego, maniobrabilidad, velocidadMaxima
-    const elRayo = new Destructor("El Rayo", 90, 80, 78, 42, 85, 92, 60);
+    console.log();
 
-    // Creamos el único barco hospital de esta flota
-    const sibelancia = new BarcoHospital();
+    const sibelancia = new BarcoHospital("Sibelancia", "Excelente", "Extrema", 75);
+    console.log("BARCO HOSPITAL");
+    console.log(`Nombre               : ${sibelancia.getNombre()}`);
+    console.log(`Flotabilidad         : ${sibelancia.getFlotabilidad()}`);
+    console.log(`Estabilidad          : ${sibelancia.getEstabilidad()}`);
+    console.log(`Cantidad de pacientes: ${sibelancia.getCapacidadPacientes()}`);
 
-    // Creación de lanchas médicas (la gaucha y el gaucho)
+    console.log();
 
-    const laGaucha = new LanchaMedica("La gaucha", 95, 70, 40, 48, 55, true, 300);
-    const elGaucho = new LanchaMedica("El gaucho", 95, 70, 40, 48, 55, true, 300);
+    const laGaucha = new LanchaMedica("La Gaucha", "Elevada", "No muy buena", "Afectada", "Fuera de borda", 300);
+    console.log("LANCHA MÉDICA");
+    console.log(`Nombre         : ${laGaucha.getNombre()}`);
+    console.log(`Flotabilidad   : ${laGaucha.getFlotabilidad()}`);
+    console.log(`Estabilidad    : ${laGaucha.getEstabilidad()}`);
+    console.log(`Maniobrabilidad: ${laGaucha.getManiobrabilidad()}`);
+    console.log(`Tipo de motor  : ${laGaucha.getTipoMotor()}`);
+    console.log(`Capacidad grúa : ${laGaucha.getCapacidadGrua()} kg.`);
 
+    console.log();
 
-    flota.agregarNavio(laArgentina);
-    flota.agregarNavio(elRayo);
-    flota.agregarNavio(sibelancia);
-    // agregamos las lanchas médicas
-    flota.agregarNavio(laGaucha);
-    flota.agregarNavio(elGaucho);
-
-    flota.mostrarResumen();
-
-    // Datos propios de los barcos de guerra
-    console.log(`Acorazado: ${laArgentina.getNombre()} | Blindaje: ${laArgentina.getBlindaje()} | Potencia de fuego: ${laArgentina.getPotenciaFuego()}`);
-    console.log(`Destructor: ${elRayo.getNombre()} | Potencia de fuego: ${elRayo.getPotenciaFuego()} | Maniobrabilidad: ${elRayo.getManiobrabilidad()} | Vel. máxima: ${elRayo.getVelocidadMaxima()}`);
-
-    // Datos propios del hospital
-    console.log(`Hospital: ${sibelancia.getNombre()} | Capacidad: ${sibelancia.getCapacidadPacientes()} pacientes`);
-
-    // Datos propios de las lanchas
-    console.log(`Lancha: ${laGaucha.getNombre()} | Motor FB: ${laGaucha.getMotorFueraBorda()} | Grua: ${laGaucha.getCapacidadGruaKg()}kg | Maniobrabilidad: ${laGaucha.getManiobrabilidad()}`);
-    console.log(`Lancha: ${elGaucho.getNombre()} | Motor FB: ${elGaucho.getMotorFueraBorda()} | Grua: ${elGaucho.getCapacidadGruaKg()}kg | Maniobrabilidad: ${elGaucho.getManiobrabilidad()}`);
+    const elGaucho = new LanchaMedica("El Gaucho", "Elevada", "No muy buena", "Afectada", "Fuera de borda", 300);
+    console.log("LANCHA MÉDICA");
+    console.log(`Nombre         : ${elGaucho.getNombre()}`);
+    console.log(`Flotabilidad   : ${elGaucho.getFlotabilidad()}`);
+    console.log(`Estabilidad    : ${elGaucho.getEstabilidad()}`);
+    console.log(`Maniobrabilidad: ${elGaucho.getManiobrabilidad()}`);
+    console.log(`Tipo de motor  : ${elGaucho.getTipoMotor()}`);
+    console.log(`Capacidad grúa : ${elGaucho.getCapacidadGrua()} kg.`);
 }
 
 main();

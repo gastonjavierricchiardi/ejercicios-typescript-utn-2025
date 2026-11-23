@@ -7,21 +7,26 @@
 */
 
 import Ninja from "./Ninja";
-import { imprimirSalto, imprimirAtaque } from "./utils/acciones";
 
 function main(): void {
-    const ninja1 = new Ninja("Karate", "Nunchaku", 9, 5);
-    const ninja2 = new Ninja("Ninjutsu", "Katana", 7, 3);
-    const ninja3 = new Ninja("TAEKONDO", "DAGA", -5, 0)
+    const ninja1 = new Ninja();
+    ninja1.setArteMarcial("Karate");
+    ninja1.setArma("Katana");
+    ninja1.setFuerza(80);
+    ninja1.setSalto(3);
 
-    imprimirSalto(ninja1, 2);
-    imprimirAtaque(ninja1);
+    ninja1.saltar(2);
+    ninja1.ataque();
 
-    imprimirSalto(ninja2, 3);
-    imprimirAtaque(ninja2);
+    console.log();
 
-    imprimirSalto(ninja3, 2);
-    imprimirAtaque(ninja3);
-    console.log("Ninja3 fuerza:", ninja3.getFuerza(), "salto:", ninja3.getSalto());
+    const ninja2 = new Ninja();
+    ninja2.setArteMarcial("Jiu-Jitsu");
+    ninja2.setArma("Nunchaku");
+    ninja2.setFuerza(65);
+    ninja2.setSalto(5);
+
+    ninja2.saltar(3);
+    ninja2.ataque();
 }
 main();

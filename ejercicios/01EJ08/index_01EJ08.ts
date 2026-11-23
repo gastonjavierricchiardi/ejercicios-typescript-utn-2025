@@ -22,23 +22,21 @@ import Visitante from "./visitante";
 import Guardia from "./guardia";
 
 function main(): void {
-    console.log("===== EJ 08: Instancias y datos (getters) =====");
+    const persona1 = new Persona();
+    persona1.setNombre("Gastón");
+    persona1.setApellido("Ricchiardi");
 
-    // PERSONA
-    const per0 = new Persona("Tiago", "Gael");
-    console.log("Persona ->", "Nombre:", per0.getNombre(), "| Apellido:", per0.getApellido());
+    const visitante1 = new Visitante();
+    visitante1.setNombre("Desirée");
+    visitante1.setApellido("Candelaria");
 
-    // GUARDIA
-    const per1 = new Guardia("Desirée", "Lis");
-    console.log("Guardia ->", "Nombre:", per1.getNombre(), "| Apellido:", per1.getApellido());
+    const guardia1 = new Guardia();
+    guardia1.setNombre("Carlos");
+    guardia1.setApellido("Gómez");
 
-    // VISITANTE
-    const per2 = new Visitante("Gastón", "javier");
-    console.log(
-        "Visitante ->",
-        "Nombre:", per2.getNombre(),
-        "| Apellido:", per2.getApellido(),
-    );
+    console.log(`Persona: ${persona1.getNombre()} ${persona1.getApellido()}`);
+    console.log(`Visitante: ${visitante1.getNombre()} ${visitante1.getApellido()}`);
+    console.log(`Guardia: ${guardia1.getNombre()} ${guardia1.getApellido()}`);
 }
 
 main();

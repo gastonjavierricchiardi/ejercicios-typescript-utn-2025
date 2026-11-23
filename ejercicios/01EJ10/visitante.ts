@@ -1,6 +1,6 @@
-// \01ej10\visitante.ts
-import Persona from "./persona"
+// \01EJ10\visitante.ts
+import Persona from "./persona";
 
 export default class Visitante extends Persona {
-    // En este Ej aún no se hace nada con el visitante
+    // Hereda presentarse() de Persona sin sobreescribirlo.
 }

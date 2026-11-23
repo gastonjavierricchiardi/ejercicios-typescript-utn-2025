@@ -16,13 +16,12 @@ Crear instancias de cada una de las clases y asignarle al dron las distintas her
 velocidad, altura y tipo de herramienta que lleva.
 */
 import { Dron } from "./dron/dron";
-import { IHerramientas } from "./herramienta/iherramientas";
 import { Sensor } from "./herramienta/modelos/sensor";
 import { Brobot } from "./herramienta/modelos/brobot";
 import { Taser } from "./herramienta/modelos/taser";
 
 function main(): void {
-    console.log("//===== Ejercicio 14 =====\\");
+    console.log("===== Ejercicio 14 =====");
 
     const dron1 = new Dron(new Sensor());
 
