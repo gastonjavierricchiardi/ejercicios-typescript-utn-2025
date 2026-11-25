@@ -12,7 +12,7 @@ function main(): void {
     const gestor = new GestorInmuebles(repositorio);
 
     const contactoTelefono = new Contacto("Gastón", "Ricchiardi", "11 1234-5678", "");
-    const contactoCorreo = new Contacto("Lucía", "Pérez", "", "lucia@example.com");
+    const contactoCorreo = new Contacto("Heraldo", "Pérez", "", "heraldo@example.com");
     const contactoIncompleto = new Contacto("Carlos", "Gómez", "", "");
 
     const datosCasa = new DatosCatastrales("Buenos Aires", "Centro", "San Martín", 120, "06000");
