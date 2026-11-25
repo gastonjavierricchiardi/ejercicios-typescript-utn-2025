@@ -1,3 +1,9 @@
+# Análisis histórico 01 — Propuesta preliminar de diseño
+
+> Documento histórico: las propuestas siguientes no representan el diseño definitivo. Las interfaces de capacidades, `Flota`, Singleton, Factory, el atributo `velocidadMaxima` y la inclusión de solidez y velocidad crucero en `Navio` no fueron adoptados en el modelo académico vigente. Consultar [README.md](README.md) y la página `FINAL` de [01EJ15_.dio](01EJ15_.dio). El cuerpo original de este análisis se mantiene sin cambios.
+
+---
+
 ## 1) Qué “cosas” existen en el problema (entidades) y qué datos pide cada una
 
 ### A) Lo común a _todos_ los barcos

@@ -1,3 +1,9 @@
+# Análisis histórico 00 — Extracción inicial de requisitos
+
+> Documento histórico conservado como antecedente del ejercicio. El diseño definitivo está documentado en [README.md](README.md), y el UML vigente es la página `FINAL` de [01EJ15_.dio](01EJ15_.dio). El cuerpo original de este análisis se mantiene sin cambios.
+
+---
+
 15. La Marina del reino de Caballito quiere desarrollar un sistema que le permita gestionar su flota de navíos; por el momento únicamente se requiere presentar ante las autoridades un posible diseño en el que se expongan las relaciones entre las entidades que modelarán los datos.
 
 - De los **acorazados** se requiere saber la flotabilidad, la solidez, la estabilidad, blindaje y potencia de fuego, además de la velocidad crucero y el nombre con el que fue bautizado.
